@@ -14,27 +14,31 @@ export const register = (app: express.Application) => {
 
 	// Get user by name
 	app.get("/user/:name", (req, res) => {
-		res.status(200).json(UserController.getUserByName(req.params.name));
+		const user: User = UserController.getUserByName(req.params.name);
+		if (user == undefined) {
+			return res.status(404).json({ error: "User not found" });
+		}
+		res.status(200).json();
 	});
 
 	// Create a new user
 	app.post("/user", (req, res) => {
 		const newUser: User = req.body;
 		console.log(newUser);
-		res.status(200).json(UserController.addUser(newUser));
+		res.status(201).json(UserController.addUser(newUser));
 	});
 
 	// Update user information
 	app.put("/user", (req, res) => {
 		const user: User = req.body;
 		console.log(user);
-		res.status(200).json(UserController.updateUser(user));
+		res.status(201).json(UserController.updateUser(user));
 	});
 
 	// Delete user
 	app.delete("/user/:userId", (req, res) => {
 		const userId: number = parseInt(req.params.userId);
 		console.log(userId);
-		res.status(200).json(UserController.deleteUser(userId));
+		res.status(201).json(UserController.deleteUser(userId));
 	});
 };
