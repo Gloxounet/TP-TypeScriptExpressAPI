@@ -2,17 +2,13 @@ version: "3.8"
 
 services:
   users-api:
-    build: ./users-api
+    build: ./services/users-api
     ports:
-      - "50001:5000"
-    volumes:
-      - ./users-api:/app
-    command: npm start
+      - "5000:5000"
   auth:
-    build: ./auth-api
+    build: ./services/auth-api
     ports:
-      - "5002:5000"
-    volumes:
-      - ./auth-api:/app
+      - "5001:5001"
     depends_on:
       - users-api
+    command: npm start
