@@ -3,7 +3,7 @@ import * as UserController from "./userController";
 import { User, Credentials } from "./model";
 
 export const register = (app: express.Application) => {
-	app.get("/", (req, res) => res.send("Hello World!"));
+	app.get("/", (req, res) => res.send("Users API"));
 
 	// Get all users
 	app.get("/user", (req, res) => {
