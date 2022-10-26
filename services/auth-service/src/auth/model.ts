@@ -3,4 +3,8 @@ type Payload = {
 	role: string;
 };
 
-export { Payload };
+type Token = {
+	token: string;
+};
+
+export { Payload, Token };

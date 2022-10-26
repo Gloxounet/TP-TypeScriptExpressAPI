@@ -15,6 +15,11 @@ type Credentials = {
 	password: string;
 };
 
+type UCredentials = {
+	username: string;
+	password: string;
+};
+
 export function isAdmin(user: User): boolean {
 	return user.role === "Admin";
 }
@@ -27,4 +32,4 @@ export function isReporter(user: User): boolean {
 	return user.role === "Reporter";
 }
 
-export { User, Credentials };
+export { User, Credentials, UCredentials };

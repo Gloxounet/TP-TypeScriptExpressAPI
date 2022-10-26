@@ -2,7 +2,7 @@ import axios from "axios";
 
 // ---------------------------------------------------------------- GET ----------------------------------------------------------------
 
-export async function getRequest<T>(url: string): Promise<T | string> {
+export async function getRequest<T>(url: string): Promise<T> {
 	// 👇️ const data: GetUsersResponse
 	const { data, status } = await axios.get<T>(url, {
 		headers: {
