@@ -9,11 +9,11 @@
 		"noImplicitAny": true,
 		"moduleResolution": "node",
 		"sourceMap": true,
-		"outDir": "dist",
+		"outDir": "services/users-api/dist",
 		"baseUrl": ".",
 		"paths": {
 			"*": ["node_modules/*"]
 		}
 	},
-	"include": ["src/**/*"]
+	"include": ["services/users-api/src/**/*", "auth"]
 }
